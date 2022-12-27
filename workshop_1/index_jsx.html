@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Production -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Development -->
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+  
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Some static html page</h1>
+
+    <h2>React APP in static html</h2>
+    <div id="app"></div>
+  
+    <script type="text/babel">
+      const Component = (props) => {
+        const [count, setCount] = React.useState(0)
+
+        React.useEffect(function () {
+          setInterval(tick, 1000)
+        }, []);
+
+        const tick = () => {
+          //function because tick in setInterval not change when change count
+          setCount(function (count) { return count + 1 });
+        }
+
+        const onReset = () => {
+          setCount(0)
+        }
+
+        return <div>
+          <p>Hello from: {props.from}</p>
+          <p>Count: {count}</p>
+          <button onClick={onReset}>Reset</button>
+        </div>;
+      };
+
+      const app = document.getElementById('app');
+      const root = ReactDOM.createRoot(app);
+      root.render(<Component from="App" />);
+    </script>
+</body>
+
+</html>
