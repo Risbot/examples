@@ -17,8 +17,11 @@
 
     <h1>Some static html page</h1>
 
-    <h2>React APP in static html</h2>
-    <div id="app"></div>
+    <h2>React APP1 in static html</h2>
+    <div id="app1"></div>
+
+    <h2>React APP2 in static html</h2>
+    <div id="app2"></div>
   
     <script type="text/babel">
       const Component = (props) => {
@@ -44,9 +47,13 @@
         </div>;
       };
 
-      const app = document.getElementById('app');
-      const root = ReactDOM.createRoot(app);
-      root.render(<Component from="App" />);
+      const app1 = document.getElementById('app1');
+      const root1 = ReactDOM.createRoot(app1);
+      root1.render(<Component from="App 1" />);
+
+      const app2 = document.getElementById('app2');
+      const root2 = ReactDOM.createRoot(app2);
+      root2.render(<Component from="App 2" />);
     </script>
 </body>
 

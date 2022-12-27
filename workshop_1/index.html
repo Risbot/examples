@@ -15,9 +15,12 @@
 
     <h1>Some static html page</h1>
 
-    <h2>React APP in static html</h2>
-    <div id="app"></div>
+    <h2>React APP 1 in static html</h2>
+    <div id="app1"></div>
   
+    <h2>React APP 2 in static html</h2>
+    <div id="app2"></div>
+
     <script>
       function Component(props) {
         const [count, setCount] = React.useState(0)
@@ -42,10 +45,14 @@
         )
       };
   
-      const app = document.getElementById('app');
-      const root = ReactDOM.createRoot(app);
-      root.render(React.createElement(Component, { from: "App" }, null));
-    </script>
+      const app1 = document.getElementById('app1');
+      const root1 = ReactDOM.createRoot(app1);
+      root1.render(React.createElement(Component, { from: "App 1" }, null));
+   
+      const app2 = document.getElementById('app2');
+      const root2 = ReactDOM.createRoot(app2);
+      root2.render(React.createElement(Component, { from: "App 2" }, null));
+   </script>
 </body>
 
 </html>
